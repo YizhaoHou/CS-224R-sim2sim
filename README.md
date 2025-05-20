@@ -26,7 +26,7 @@
 ### 3. Set up Conda environment (Python 3.8)
 ```bash
 conda create -n isaacgym python=3.8
-conda activate unitree-rl
+conda activate isaacgym
 conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=12.1 -c pytorch -c nvidia
 cd isaacgym/python
 pip install -e .
