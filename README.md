@@ -38,6 +38,14 @@ cd examples
 python 1080_balls_of_solitude.py
 ```
 
+### 5. Fix CUDA preload issue (optional but recommended):
+```bash
+echo 'export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
+source ~/.bashrc
+```
+
+
+
 
 
  
