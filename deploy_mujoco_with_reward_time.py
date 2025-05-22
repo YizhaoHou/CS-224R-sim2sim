@@ -67,7 +67,7 @@ if __name__ == "__main__":
     total_reward = 0.0
 
     def simulate_step():
-        nonlocal counter, action, target_dof_pos, total_reward
+        global counter, action, target_dof_pos, total_reward
         tau = pd_control(target_dof_pos, d.qpos[7:], kps, np.zeros_like(kds), d.qvel[6:], kds)
         d.ctrl[:] = tau
         mujoco.mj_step(m, d)
