@@ -24,7 +24,7 @@ def reset_reward_state():
     prev_dof_vel = None
     prev_action = None
 
-def compute_reward_mujoco(d, cmd, tau, qj, dqj, action, default_angles, ang_vel_scale, gravity_orientation):
+def compute_reward_mujoco(m, d, cmd, tau, qj, dqj, action, default_angles, ang_vel_scale, gravity_orientation):
     global prev_dof_vel, prev_action
     reward = 0.0
 
@@ -48,7 +48,7 @@ def compute_reward_mujoco(d, cmd, tau, qj, dqj, action, default_angles, ang_vel_
     reward += REWARD_CFG["dof_vel"] * np.sum(dqj ** 2)
 
     if prev_dof_vel is not None:
-        acc = (dqj - prev_dof_vel) / d.opt.timestep
+        acc = (dqj - prev_dof_vel) / m.opt.timestep
         reward += REWARD_CFG["dof_acc"] * np.sum(acc ** 2)
     prev_dof_vel = dqj.copy()
 

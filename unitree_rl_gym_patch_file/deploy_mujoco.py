@@ -87,6 +87,7 @@ if __name__ == "__main__":
             omega_scaled = omega * ang_vel_scale
 
             r_step = compute_reward_mujoco(
+                m=m,
                 d=d,
                 cmd=cmd,
                 tau=tau,
